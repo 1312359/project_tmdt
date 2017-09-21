@@ -28,7 +28,7 @@
 #home-heading {
   position: relative;
   min-height: 200px;
-  background: url("lights.jpg");
+  background: url("/images/lights.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   text-align: center;
@@ -45,7 +45,7 @@
 #video-play {
   position: relative;
   min-height: 200px;
-  background: url("media.jpg");
+  background: url("/images/media.jpg");
   background-position: 0 -300px;
   background-attachment: fixed;
   text-align: center;
