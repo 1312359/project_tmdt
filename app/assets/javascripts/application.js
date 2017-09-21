@@ -17,5 +17,4 @@
 //= require slick
 //= require popper
 //= require bootstrap.min
-//= require bootstrap
 //= require_tree .
