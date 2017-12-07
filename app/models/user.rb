@@ -7,15 +7,16 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
-  validates :country, presence: true
-def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
-  #chuyen tu ki hieu sang ten
-  def country_name
-   c = ISO3166::Country[self.country]
-   return c.translations[I18n.locale.to_s] || c.name
-end
+  
+
+# def User.digest(string)
+#     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+#                                                   BCrypt::Engine.cost
+#     BCrypt::Password.create(string, cost: cost)
+#   end
+#   #chuyen tu ki hieu sang ten
+#   def country_name
+#   c = ISO3166::Country[self.country]
+#   return c.translations[I18n.locale.to_s] || c.name
+# end
 end
