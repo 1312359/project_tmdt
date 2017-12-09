@@ -44,9 +44,12 @@ gem "fog-google"
 gem "google-api-client", "> 0.8.5", "< 0.9"
 gem "mime-types"
 
-# Paginate lands
+# Paginate pages
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
+# CK HTML Editor
+gem 'ckeditor_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

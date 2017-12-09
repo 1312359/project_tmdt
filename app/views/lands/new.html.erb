@@ -1,0 +1,21 @@
+<%= render 'shared/page_title', title: "Add land", title_content: "Auction your land" %>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-4">
+        <%= form_for @land do |f|%>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :images %>
+            <%= f.file_field :images, :multiple => true, class: "form-control" %>
+          </div>
+          
+          <%= f.submit "Add", class: "btn btn-lg btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+</div>

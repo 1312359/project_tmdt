@@ -17,4 +17,5 @@
 //= require slick
 //= require popper
 //= require bootstrap
+//= require ckeditor-jquery
 //= require_tree .

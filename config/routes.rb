@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   root 'pages#index'
   
-  # land
-  get 'lands' => 'pages#lands'
+  # land index
+  get 'lands' => 'lands#index'
   
   # action
   get 'logout' => 'sessions#destroy'
   post '/' => 'sessions#create'
   get 'signup' => 'users#new'
   
-  # users
-  resources :users
+  # users, lands
+  resources :users, :lands, except: [:index]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

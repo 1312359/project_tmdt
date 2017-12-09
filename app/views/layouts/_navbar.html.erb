@@ -4,10 +4,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <a href="index.html" class="navbar-brand">Glozzom</a>
+      <a href="index.html" class="navbar-brand">Udun</a>
       <ul class="navbar-nav ml-auto mr-5">
         <li class="nav-item active">
-          <a href="index.html" class="nav-link">Home </a>
+          <%= link_to "Home", root_path, class: "btn btn-dark nav-link" %>
         </li>
         <li class="nav-item">
           <a href="about.html" class="nav-link">About Us </a>
@@ -20,7 +20,7 @@
           
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <%= link_to "All lands", "/lands", class: "dropdown-item" %>
-              <a class="dropdown-item" href="#">Add land</a>
+              <%= link_to "Add land", new_land_path, class: "dropdown-item" %>
               <a class="dropdown-item" href="#">Pending land</a>
             </div>
           </div>
@@ -37,30 +37,29 @@
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
       </form>
       
-      <div class="dropdown ml-auto">
-        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Login
-        </button>
-        <% if !logged_in? %>
-          <%= form_for :session, html: { class:"dropdown-menu p-lg-3",style:"width:200px" } do |f|%>
-            <div class="form-group">
-              <%= f.label :email %>
-              <%= f.email_field :email, class: "form-control", placeholder: "email@example.com" %>
-            </div>
-            
-            <div class="form-group">
-              <%= f.label :password %>
-              <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-            </div>
-            
-            <%= f.submit "Sign in", class: "btn btn-primary" %>
-            <%= link_to "Sign up", signup_path, class: "btn btn-danger" %>
-          <% end %>
-        <% else %>
-          <%= link_to "Logout", logout_path, class: "btn btn-warning" %>
-        <% end %>
-        
-      </div>
+      <% if !logged_in? %>
+        <div class="dropdown ml-auto">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login
+          </button>
+            <%= form_for :session, html: { class:"dropdown-menu p-lg-3",style:"width:200px" } do |f|%>
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: "form-control", placeholder: "email@example.com" %>
+              </div>
+              
+              <div class="form-group">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+              </div>
+              
+              <%= f.submit "Sign in", class: "btn btn-primary" %>
+              <%= link_to "Sign up", signup_path, class: "btn btn-danger" %>
+            <% end %>
+        </div>
+      <% else %>
+        <%= link_to "Logout", logout_path, class: "ml-auto btn btn-warning" %>
+      <% end %>
     </div>
   </div>
 </nav>

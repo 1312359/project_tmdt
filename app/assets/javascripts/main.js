@@ -22,3 +22,6 @@ $('.slider').slick({
   slideToScroll:1
 });
 
+$('.ckeditor').ckeditor({
+  // optional config
+});
