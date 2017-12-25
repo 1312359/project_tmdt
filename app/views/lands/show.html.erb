@@ -1,0 +1,65 @@
+<%= render 'shared/page_title', title: @land.title, title_content: @land.project_name %>
+
+<div class="row">
+    <div class="col-md-4">
+        
+        <% if !@land.images.empty? %>
+            <%= image_tag @land.images.last.product.url %>
+        <% end %>
+    </div>
+    
+    <div class="col-md-8">
+        <h2>Thông tin</h2>
+        <p>Tên dự án: <%= @land.project_name %></p>
+        <p>Chủ đầu tư: <%= @land.investor%></p>
+        <p>Địa chỉ: <%= @land.address%></p>
+        <p>Giá min: <%=@land.min_price%></p>
+        <p>Giá hiện tại: <%=@land.bid_price%></p>
+        <%=form_for @land , :method => :patch do |f| %>
+            <%= f.label :Tien_dau_gia%>
+            <%= f.text_field :tien, :class => 'text_field' %>
+            <%= f.submit "Nhap so tien",class: "btn btn-primary"%>
+            
+            <%= link_to "Them vao gio hang",line_items_path(land_id: @land.id),:method => :post, class: "btn btn-primary"%>
+        <%end%>
+    </div>
+</div>
+
+
+
+<h1><center><%= @land.TenDuAn%></center></h1>
+<div class="row">
+  <div class="col-md-8">
+
+  </div>
+  <div class="col-md-4" >
+<h2>Thong tin</h2>
+<p>Ten du an : <%= @land.TenDuAn%></p>
+<p>Chu dau tu : <%= @land.TenChuDauTu%></p>
+<p>Dia chi : <%= @land.DiaChi%></p>
+<p>Gia : <%=@land.Gia%></p>
+<p>Tien dau gia : <%=@land.tien%></p>
+<%=form_for @land , :method => :PATCH do |f| %>
+<%=f.label :Tien_dau_gia%>
+<%= f.text_field :tien, :class => 'text_field' %>
+<%= f.submit "Nhap so tien",class: "btn btn-primary"%>
+
+<%= link_to "Them vao gio hang",line_items_path(land_id: @land.id),:method => :post, class: "btn btn-primary"%>
+<%end%>
+  </div>
+</div>
+<h4>MO TA DU AN</h4>
+<%if @land.QuyMo.blank?%>
+<p>Khong co mo ta</p>
+<%else%>
+<p><%@land.QuyMo%></p>
+<%end%>
+<h4>THONG TIN KHAC</h4>
+<p>So tang : <%=@land.SoTang%></p>
+<p>So phong ngu : <%=@land.SoPhongNgu%></p></br>
+<%if current_user%>
+<center>
+<%= link_to "Chinh sua thong tin", edit_land_path, class: "btn btn-primary"%>
+<%= link_to "Xoa bai viet", @land,method: :delete,data: { confirm: "Ban co chac khong?"}, class: "btn btn-primary"%>
+</center>
+<%end%>

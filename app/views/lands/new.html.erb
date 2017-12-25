@@ -5,13 +5,53 @@
       <div class="col-4">
         <%= form_for @land do |f|%>
           <div class="form-group">
-            <%= f.label :title %>
+            <%= f.label :project_name, "Tên dự án" %>
+            <%= f.text_field :project_name, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :title, "Mô tả ngắn" %>
             <%= f.text_field :title, class: "form-control" %>
           </div>
           
           <div class="form-group">
-            <%= f.label :images %>
-            <%= f.file_field :images, :multiple => true, class: "form-control" %>
+            <%= f.label :investor, "Chủ đầu tư" %>
+            <%= f.text_field :investor, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :address, "Số nhà + Tên đường" %>
+            <%= f.text_field :address, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :ward, "Phường/Xã" %>
+            <%= f.text_field :ward, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :district, "Quận/Huyện" %>
+            <%= f.text_field :district, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :state_city, "Tỉnh/Thành phố" %>
+            <%= f.text_field :state_city, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :min_price, "Giá khởi điểm" %>
+            <%= f.number_field :min_price, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :max_price, "Giá bán liền (nếu có)" %>
+            <%= f.number_field :min_price, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :images, "Upload những hình mô tả (hình đầu là cover)" %>
+            <%= f.file_field :images, :multiple => true, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
           </div>
           
           <%= f.submit "Add", class: "btn btn-lg btn-primary" %>

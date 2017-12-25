@@ -4,18 +4,17 @@ class CreateLands < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :project_name
       t.string :investor
-      t.string :price_per_m2
-      t.string :total_value
+      t.string :min_price
+      t.string :max_price
+      t.string :bid_price
       t.string :ward
       t.string :district
-      t.string :city
-      t.string :state
+      t.string :state_city
       t.string :area
       t.text :images, array: true, default: []
       t.string :address
-      t.string :size
-      t.integer :total_floor
-      t.integer :total_room
+      # t.integer :total_floor
+      # t.integer :total_room
 
       t.timestamps
     end

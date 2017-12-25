@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:success] = "You have successfully logged in"
       redirect_to root_path
     else
-      flash.now[:danger] = "There was something wrong with your login information"
+      flash[:danger] = "There was something wrong with your login information"
       redirect_back(fallback_location: root_path)
     end
   end

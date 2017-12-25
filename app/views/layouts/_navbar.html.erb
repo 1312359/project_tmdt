@@ -42,7 +42,7 @@
           <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Login
           </button>
-            <%= form_for :session, html: { class:"dropdown-menu p-lg-3",style:"width:200px" } do |f|%>
+            <%= form_for :session,url: { controller:"sessions", action:"create" }, html: { class:"dropdown-menu p-lg-3",style:"width:200px" } do |f|%>
               <div class="form-group">
                 <%= f.label :email %>
                 <%= f.email_field :email, class: "form-control", placeholder: "email@example.com" %>

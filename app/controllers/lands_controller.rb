@@ -17,13 +17,22 @@ class LandsController < ApplicationController
         redirect_back(fallback_location: root_path)
     end
     
+    def show
+        @land = set_land
+    end
+    
     def destroy
         
     end
     
 private
 
+    def set_land
+        Land.find(params[:id])
+    end
+
     def land_params
-        params.require(:land).permit(:title, {images: []})
+        params.require(:land).permit(:title, :project_name, :investor, :min_price, :max_price,
+                                        :district, :ward, :city, :state, :area, :address, {images: []})
     end
 end
