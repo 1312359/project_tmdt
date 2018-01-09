@@ -1,30 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# User.create!(name: 'van', email: 'dinhvan2204@gmail.com', address: '556 HCM', number: '01255351349',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Tan', email: 'vantan1104@gmail.com', address: '37 HN', number: '0913979345',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Long', email: 'longlong3937@gmail.com', address: '550 HCM', number: '01247658687',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Son', email: 'Sonnguyen2204@gmail.com', address: '660 HCM', number: '0989765353',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Teo', email: 'Teodeptrai2020@gmail.com', address: '37 HCM', number: '0930909898',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Tung', email: 'Tungnui30303@gmail.com', address: '12 HCM', number: '01255352345',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Nhan', email: 'Nhanvan1098@gmail.com', address: '10 HCM', number: '0978123435',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Quan', email: 'Quanque2028@gmail.com', address: '4 HCM', number: '0991987678',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Thuy', email: 'ThuyNguyen3304@gmail.com', address: '90 HCM', number: '01235355666',password: '123456', password_confirmation:'123456',country: 'VN')
-# User.create!(name: 'Nhu', email: 'NhuNguyen3232@gmail.com', address: '112 HCM', number: '0919387956',password: '123456', password_confirmation:'123456',country: 'VN')
-
-# Land.create!(project_name: 'FLC GRAND HOTEL HẠ LONG', investor: 'Công ty Cổ phần Tập đoàn FLC', ward: ' Hồng Hà',city: 'Hạ Long',Tinh: 'Quảng Ninh', DiaChi:'Cột số 3 - số 8, phường Hồng Hà, Hạ Long, Quảng Ninh',Dientich: '2.240.000 m²')
-# Land.create!(project_name: 'PentStudio', investor: ' Công ty CP Tứ Hiệp Hồng Hà Dầu Khí', ward: ' Phú Thượng',city: 'Hà Nội', DiaChi:'Lô B, số 699 Lạc Long Quân, phường Phú Thượng, quận Tây Hồ, Hà Nội',Dientich: ' 45-108m2')
-
-
-# Land.create!(TenDuAn: 'The Sapphire Residence', TenChuDauTu: 'Tập đoàn Vàng bạc Đá quý DOJI', Gia:'', Phuong: ' Hồng Gai',ThanhPho: 'Hạ Long',Tinh: 'Quảng Ninh', DiaChi:'Đường Trần Quốc Nghiễn, phường Hồng Gai, TP. Hạ Long, Quảng Ninh',Dientich: '7.647 m²')
-# Land.create!(TenDuAn: 'Hồng Hà Eco City', TenChuDauTu: 'Tập đoàn Vàng bạc Đá quý DOJI', Gia:'12.8 triệu/m²', Phuong: 'Thanh Trì',ThanhPho: 'Hà Nội', DiaChi:'Xã Tứ Hiệp, Thanh Trì, Hà Nội',Dientich: '167 m²')
-# Land.create!(TenDuAn: 'Ocean Dunes', TenChuDauTu: 'Tập đoàn Rạng Đông', Gia:'15 triệu/m²', Phuong: 'Phú Thủy',ThanhPho: 'Phan Thiết',Tinh: 'Bình Thuận', DiaChi:'Phường Phú Thủy, Phan Thiết, Bình Thuận',Dientich: '620.000 m²')
-# Land.create!(TenDuAn: 'Hồ Gươm Plaza', TenChuDauTu: 'Công ty CP may Hồ Gươm - HOGARSCO', Gia:'18.5 triệu/m²', Phuong: 'Hà Đông',ThanhPho: 'Hà Nội', DiaChi:'Số 102-104 Trần Phú, KĐT Mộ Lao, Hà Đông, Hà Nội',Dientich: '10.316 m²')
-# Land.create!(TenDuAn: 'Gold Land Bình Thạnh', TenChuDauTu: '', Gia:'18.5 triệu/m²', Phuong: '13',Quan: 'Bình Thạnh',ThanhPho: 'Hồ Chí Minh', DiaChi:'Phố Nguyễn Xí, Phường 13, Bình Thạnh, Hồ Chí Minh',Dientich: '10.316 m²')
-# Land.create!(TenDuAn: 'Thủ Đức Garden Homes', TenChuDauTu: 'Công ty TNHH Xây dựng - Trang trí Việt Quốc', Gia:'17.5 triệu/m²', Phuong: 'Hiệp Bình Chánh',ThanhPho: 'Hồ Chí Minh', DiaChi:'Phường Hiệp Bình Chánh, Thủ Đức, Hồ Chí Minh',Dientich: '150.000 m²')
-# Land.create!(TenDuAn: 'Hanhud Hoàng Quốc Việt', TenChuDauTu: 'Công ty CP Kinh doanh Phát triển nhà và Đô thị Hà Nội (HanHud)', Gia:'27 triệu/m²', Phuong: 'Cổ Nhuế 1',ThanhPho: 'Hà Nội', DiaChi:'Số 234 Hoàng Quốc Việt, phường Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội',Dientich: '2.443 m²')
+Land.create!([
+  {title: "Căn hộ khách sạn 5 Sao Condotel FLC Hạ Long nằm trong quần thể Resort FLC Hạ Long. Quy mô 22 tầng, 574 căn hộ. Cam kết 12%/8 năm.", project_name: "FLC GRAND HOTEL HẠ LONG", investor: "Công ty Cổ phần Tập đoàn FLC", min_price: "1000000000", max_price: nil, bid_price: nil, ward: "Hồng Hà", district: "Hạ Long", state_city: nil, area: nil, images: ["phoi_canh_cam_6_03_03-842x475.jpg", "ra-mat-flc-grand-hotel-ha-long-628201712649am.jpg"], address: "Cột số 3 - số 8", description: nil, user_id: 1},
+  {title: "Tiếp theo các dự án Turn-Key được giới chuyên môn đánh giá cao như Tòa nhà trụ sở Hòa Phát, Tòa nhà trụ sở PVI, Tòa nhà trụ sở FPT và Khách sạn 5 sao Pao's Hotel Sapa, CTX Holdings ra mắt thị trường căn hộ tại Hà Nội với Dự án PentStudio", project_name: "PentStudio", investor: "Công ty CP Tứ Hiệp Hồng Hà Dầu Khí", min_price: "11000000000", max_price: nil, bid_price: nil, ward: "Phú Thượng", district: "Tây Hồ", state_city: nil, area: nil, images: ["phoi-canh-pentstudio-tay-ho.jpg", "vuon-tren-cao-pentstudio.jpg"], address: "669 Lạc Long Quân", description: nil, user_id: 1},
+  {title: "The Sapphire Residence Hạ Long thành công rực rỡ sau mở bán. Hơn 800 khách hàng đã tham dự “Journey to Paradise - Hành trình đến Vịnh thiên đường” – sự kiện mở bán chính thức dự án The Sapphire Residence Hạ Long ngày 25/11/2017 vừa qua tại khu nghỉ dưỡng 5 sao Vinpearl Hạ Long Bay Resort, TP.", project_name: "The Sapphire Residence", investor: "Tập đoàn Vàng bạc Đá quý DOJI", min_price: "12000000000", max_price: nil, bid_price: nil, ward: "Tứ Hiệp", district: "Thành Trì", state_city: nil, area: nil, images: ["dubai-ha-long-the-sapphire-residence_1_.jpg", "phoi-canh-tong-the.jpeg"], address: "", description: nil, user_id: 1},
+  {title: "Hồng Hà Eco City sở hữu quỹ đất lên tới 16,7ha phía Nam thủ đô. Chủ đầu tư tham vọng kiến tạo một khu đô thị sinh thái đáng sống ngay trong lòng Hà Nội đáp ứng yêu cầu ngày một cao về chất lượng", project_name: "Hồng Hà Eco City", investor: "Tập đoàn Vàng bạc Đá quý DOJI", min_price: "12000000000", max_price: nil, bid_price: nil, ward: "Tứ Hiệp", district: "Thành Trì", state_city: nil, area: nil, images: ["du-an-chung-cu-hong-ha-eco-city-tu-hiep-thanh-tri-04.png", "tien-ich-san-vuon-du-an.jpg"], address: "", description: nil, user_id: 1},
+  {title: "Tọa lạc trên một trong những bãi biển đẹp nhất Việt Nam, với tầm nhìn hướng ra biển Đông bao la, cách thành phố Hồ Chí Minh 198 km về hướng Bắc, Phan Thiết Ocean Dunes Resort là một trong những điểm đến lý tưởng cho những ai yêu thích không gian yên bình, thư giãn và trong lành", project_name: "Ocean Dunes", investor: "Tập đoàn Rạng Đông", min_price: "9000000000", max_price: nil, bid_price: nil, ward: "Phú Thủy", district: "Phan Thiết", state_city: nil, area: nil, images: ["105088839.jpg", "a.jpg"], address: "", description: nil, user_id: 1},
+  {title: "Bán chung cư Hồ Gươm Plaza diện tích từ 73-146m2, sắp bàn giao nhà quý 4/2013. Dự án thuộc KĐT Mỗ Lao - Hà Đông, hạ tầng đồng bộ, tiện ích đầy đủ, hiện đại.", project_name: "Hồ Gươm Plaza", investor: "Công ty CP may Hồ Gươm - HOGARSC", min_price: "", max_price: nil, bid_price: nil, ward: "Mộ Lao", district: "Hà Đông", state_city: nil, area: nil, images: ["a.jpg", "chung-cu-ho-guom-plaza.jpg"], address: "102-104 Trần Phú", description: nil, user_id: 1}
+])
+User.create!([
+  {name: "Minh", email: "ogremoon54@gmail.com", address: "113/10 Street 11,Thu Duc District", number: "01654565281", password_digest: "$2a$10$Tp34zNrbUaAvQJ9jIsHrj.PMCCyHQ8uldwQZSv4aTrdJrxuhOB3..", country: nil}
+])

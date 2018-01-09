@@ -16,8 +16,8 @@
         <p>Giá min: <%=@land.min_price%></p>
         <p>Giá hiện tại: <%=@land.bid_price%></p>
         <%=form_for @land , :method => :patch do |f| %>
-            <%= f.label :Tien_dau_gia%>
-            <%= f.text_field :tien, :class => 'text_field' %>
+            <%= f.label :tien %>
+            <%= f.number_field :tien %>
             <%= f.submit "Nhap so tien",class: "btn btn-primary"%>
             
             <%= link_to "Them vao gio hang",line_items_path(land_id: @land.id),:method => :post, class: "btn btn-primary"%>

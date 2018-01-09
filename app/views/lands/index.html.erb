@@ -2,160 +2,33 @@
 
 <section id="blog" class="p-5">
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="card-columns">
-            
-            <% @lands.each do |i| %>
+      <% @lands.each_slice(3) do |ls| %>
+        <div class="row">
+            <div class="col">
+              <div class="card-columns">
+                <% ls.each do |i| %>
                 <div class="card">
                     <!--<img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
                     <% if !i.images.empty? %>
-                        <%= image_tag i.images.last.url, class: "card-img img-fluid" %>
+                        <%= image_tag i.images.last.card.url, class: "card-img-top img-fluid" %>
                     <% end %>
-                    </div>
-                    <div class="card p-3 text-right">
-                      <blockquote class="card-block card-blockquote">
-                        <p><%= i.project_name %></p>
+                    <div class="card-block">
+                        <%= link_to  i.project_name, land_path(i), class: "card-title" %>
+                        <p class="card-text">
+                            <%= i.title.capitalize.truncate(40, separator:' ') %>
+                        </p>
                         <footer>
-                          <small class="text-muted">
-                            <%= i.title.capitalize %>
-                          </small>
+                          <small class="text-muted">Uploader: <%= i.user.name.capitalize %></small>
                         </footer>
-                      </blockquote>
-                </div>
-            <% end %>
-            
-            <% @lands.each do |i| %>
-                <div class="card">
-                    <!--<img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
-                    <% if !i.images.empty? %>
-                        <%= image_tag i.images.last.url, class: "card-img img-fluid" %>
-                    <% end %>
                     </div>
-                    <div class="card p-3 text-right">
-                      <blockquote class="card-block card-blockquote">
-                        <p><%= i.project_name %></p>
-                        <footer>
-                          <small class="text-muted">
-                            <%= i.title.capitalize %>
-                          </small>
-                        </footer>
-                      </blockquote>
                 </div>
-            <% end %>
-            
-            <% @lands.each do |i| %>
-                <div class="card">
-                    <!--<img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
-                    <% if !i.images.empty? %>
-                        <%= image_tag i.images.last.url, class: "card-img img-fluid" %>
-                    <% end %>
-                    </div>
-                    <div class="card p-3 text-right">
-                      <blockquote class="card-block card-blockquote">
-                        <p><%= i.project_name %></p>
-                        <footer>
-                          <small class="text-muted">
-                            <%= i.title.capitalize %>
-                          </small>
-                        </footer>
-                      </blockquote>
-                </div>
-            <% end %>
-            
-            <% @lands.each do |i| %>
-                <div class="card">
-                    <!--<img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
-                    <% if !i.images.empty? %>
-                        <%= image_tag i.images.last.url, class: "card-img img-fluid" %>
-                    <% end %>
-                    </div>
-                    <div class="card p-3 text-right">
-                      <blockquote class="card-block card-blockquote">
-                        <p><%= i.project_name %></p>
-                        <footer>
-                          <small class="text-muted">
-                            <%= i.title.capitalize %>
-                          </small>
-                        </footer>
-                      </blockquote>
-                </div>
-            <% end %>
-            
-            <% @lands.each do |i| %>
-                <div class="card">
-                    <!--<img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
-                    <% if !i.images.empty? %>
-                        <%= image_tag i.images.last.url, class: "card-img img-fluid" %>
-                    <% end %>
-                    </div>
-                    <div class="card p-3 text-right">
-                      <blockquote class="card-block card-blockquote">
-                        <p><%= i.project_name %></p>
-                        <footer>
-                          <small class="text-muted">
-                            <%= i.title.capitalize %>
-                          </small>
-                        </footer>
-                      </blockquote>
-                </div>
-            <% end %>
-            
-            <% @lands.each do |i| %>
-                <div class="card">
-                    <!--<img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
-                    <% if !i.images.empty? %>
-                        <%= image_tag i.images.last.url, class: "card-img img-fluid" %>
-                    <% end %>
-                    </div>
-                    <div class="card p-3 text-right">
-                      <blockquote class="card-block card-blockquote">
-                        <p><%= i.project_name %></p>
-                        <footer>
-                          <small class="text-muted">
-                            <%= i.title.capitalize %>
-                          </small>
-                        </footer>
-                      </blockquote>
-                </div>
-            <% end %>
-            
-            <% @lands.each do |i| %>
-                <div class="card">
-                    <!--<img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
-                    <% if !i.images.empty? %>
-                        <%= image_tag i.images.last.url, class: "card-img img-fluid" %>
-                    <% end %>
-                    </div>
-                    <div class="card p-3 text-right">
-                      <blockquote class="card-block card-blockquote">
-                        <p><%= i.project_name %></p>
-                        <footer>
-                          <small class="text-muted">
-                            <%= i.title.capitalize %>
-                          </small>
-                        </footer>
-                      </blockquote>
-                </div>
-            <% end %>
-             
-            <!-- template -->
-            <!--<div class="card">-->
-            <!--  <img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
-            <!--</div>-->
-            <!--<div class="card p-3 text-right">-->
-            <!--  <blockquote class="card-block card-blockquote">-->
-            <!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor laudantium optio natus, aperiam magni animi?</p>-->
-            <!--    <footer>-->
-            <!--      <small class="text-muted">-->
-            <!--        Someone Famous in <cite title="Source Title">Source Title</cite>-->
-            <!--      </small>-->
-            <!--    </footer>-->
-            <!--  </blockquote>-->
-            <!--</div>-->
-            
-          </div>
+                  <div class="card p-3">
+                    
+                  </div>
+                <% end %>
+              </div>
+            </div>
         </div>
-      </div>
+      <% end %>
     </div>
 </section>
