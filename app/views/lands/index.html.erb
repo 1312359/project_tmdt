@@ -7,7 +7,7 @@
             <div class="col">
               <div class="card-columns">
                 <% ls.each do |i| %>
-                <div class="card">
+                  <div class="card">
                     <!--<img src="http://lorempixel.com/500/500/city/3" alt="" class="card-img img-fluid">-->
                     <% if !i.images.empty? %>
                         <%= image_tag i.images.last.card.url, class: "card-img-top img-fluid" %>
@@ -20,19 +20,21 @@
                         <hr/>
                         <footer class='p-auto'>
                           <small class="text-muted inline-block">Uploader: <%= i.user.name.capitalize %></small>
-                          <% if i.user = current_user %>
+                          <% if i.user == current_user %>
                             <%= link_to "Delete", land_path(i), method: :delete, class: "btn btn-danger pull-right m-1 inline-block", data: {confirm: "Are you sure?"} %>
                             <%= link_to "Edit", edit_land_path(i), class: "btn btn-warning pull-right m-1 inline-block" %>
                           <% end %>  
                         </footer>
                     </div>
-                </div>
-                <div class="card">
+                  </div> 
                   
-                </div>
-              <% end %>
+                  <div class="card">
+                    
+                  </div>
+                  
+                <% end %>
+              </div>
             </div>
-          </div>
         </div>
       <% end %>
     </div>
