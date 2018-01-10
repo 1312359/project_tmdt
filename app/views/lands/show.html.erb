@@ -1,6 +1,6 @@
-<%= render 'shared/page_title', title: @land.title, title_content: @land.project_name %>
+<%= render 'shared/page_title', title: @land.project_name, title_content: @land.investor %>
 
-<div class="row">
+<div class="row m-3">
     <div class="col-md-4">
         
         <% if !@land.images.empty? %>
@@ -10,56 +10,35 @@
     
     <div class="col-md-8">
         <h2>Thông tin</h2>
+        <p>Mô tả: <%= @land.description.capitalize %> </p>
         <p>Tên dự án: <%= @land.project_name %></p>
         <p>Chủ đầu tư: <%= @land.investor%></p>
-        <p>Địa chỉ: <%= @land.address%></p>
-        <p>Giá min: <%=@land.min_price%></p>
-        <p>Giá hiện tại: <%=@land.bid_price%></p>
-        <%=form_for @land , :method => :patch do |f| %>
-            <%= f.label :tien %>
-            <%= f.number_field :tien %>
-            <%= f.submit "Nhap so tien",class: "btn btn-primary"%>
-            
-            <%= link_to "Them vao gio hang",line_items_path(land_id: @land.id),:method => :post, class: "btn btn-primary"%>
-        <%end%>
+        <p>Địa chỉ: <%= [@land.address,@land.ward,@land.district,@land.state_city].reject(&:blank?).join(', ') %></p>
+        <p>Giá min: <%= number_with_delimiter(@land.min_price.to_i, :delimiter => ',')%></p>
+        <% if @land.status != 'closed' %>
+            <p>Giá hiện tại: <%= number_with_delimiter(@land.bid_price.to_i, :delimiter => ',')%></p>
+            <%= form_for @land, {url: bid_path(@land), method: :post} do |f| %>
+                <%= f.label :bid_price, "Ra giá: " %>
+                <%= f.number_field :bid_price, {value: [(@land.bid_price.blank?? @land.min_price.to_i*1.04 : @land.bid_price.to_i*1.04).round], step: 1000000} %>
+                <%= f.submit "Đấu giá", class: "btn btn-danger" %>
+            <% end %>
+        <% else %>
+            <p>Đấu giá đã đóng: Giá đã bán: <%=@land.bid_price%></p>
+        <% end %>
+        <br>
+        <% if !@land.max_price.blank? %>
+        <p class="font-weight-bold d-inline-block">Giá mua ngay lập tức: <%= number_with_delimiter(@land.max_price.to_i, :delimiter => ',') %></p>
+        <%= link_to "Mua ngay", root_path, class: "btn btn-success d-inline-block" %>
+        <% end %>
+        
+        
     </div>
 </div>
 
-
-
-<h1><center><%= @land.TenDuAn%></center></h1>
 <div class="row">
-  <div class="col-md-8">
-
-  </div>
-  <div class="col-md-4" >
-<h2>Thong tin</h2>
-<p>Ten du an : <%= @land.TenDuAn%></p>
-<p>Chu dau tu : <%= @land.TenChuDauTu%></p>
-<p>Dia chi : <%= @land.DiaChi%></p>
-<p>Gia : <%=@land.Gia%></p>
-<p>Tien dau gia : <%=@land.tien%></p>
-<%=form_for @land , :method => :PATCH do |f| %>
-<%=f.label :Tien_dau_gia%>
-<%= f.text_field :tien, :class => 'text_field' %>
-<%= f.submit "Nhap so tien",class: "btn btn-primary"%>
-
-<%= link_to "Them vao gio hang",line_items_path(land_id: @land.id),:method => :post, class: "btn btn-primary"%>
-<%end%>
-  </div>
+    <% if !@land.images.empty? %>
+        <% @land.images.each do |i| %>
+            <%= image_tag i.url %>
+        <% end %>
+    <% end %>
 </div>
-<h4>MO TA DU AN</h4>
-<%if @land.QuyMo.blank?%>
-<p>Khong co mo ta</p>
-<%else%>
-<p><%@land.QuyMo%></p>
-<%end%>
-<h4>THONG TIN KHAC</h4>
-<p>So tang : <%=@land.SoTang%></p>
-<p>So phong ngu : <%=@land.SoPhongNgu%></p></br>
-<%if current_user%>
-<center>
-<%= link_to "Chinh sua thong tin", edit_land_path, class: "btn btn-primary"%>
-<%= link_to "Xoa bai viet", @land,method: :delete,data: { confirm: "Ban co chac khong?"}, class: "btn btn-primary"%>
-</center>
-<%end%>

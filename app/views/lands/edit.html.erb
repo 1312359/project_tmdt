@@ -1,9 +1,9 @@
-<%= render 'shared/page_title', title: "Add land", title_content: "Auction your land" %>
+<%= render 'shared/page_title', title: "Edit land", title_content: @land.project_name.capitalize %>
 
 <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-4">
-        <%= form_for @land do |f|%>
+        <%= form_for @land, method: :patch do |f|%>
           <div class="form-group">
             <%= f.label :project_name, "Tên dự án" %>
             <%= f.text_field :project_name, class: "form-control" %>
@@ -54,7 +54,7 @@
             <%= f.file_field :images, :multiple => true, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
           </div>
           
-          <%= f.submit "Add", class: "btn btn-lg btn-primary" %>
+          <%= f.submit "Save Edit", class: "btn btn-lg btn-primary" %>
         <% end %>
       </div>
     </div>

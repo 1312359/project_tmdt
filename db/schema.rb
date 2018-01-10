@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109085751) do
+ActiveRecord::Schema.define(version: 20180109185020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lands", force: :cascade do |t|
-    t.string "title"
+    t.string "description"
     t.string "project_name"
     t.string "investor"
     t.string "min_price"
@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20180109085751) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "description"
     t.bigint "user_id"
+    t.integer "willwin"
+    t.string "status"
     t.index ["user_id"], name: "index_lands_on_user_id"
   end
 
@@ -46,4 +47,5 @@ ActiveRecord::Schema.define(version: 20180109085751) do
     t.string "country"
   end
 
+  add_foreign_key "lands", "users", column: "willwin"
 end

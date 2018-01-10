@@ -12,22 +12,27 @@
                     <% if !i.images.empty? %>
                         <%= image_tag i.images.last.card.url, class: "card-img-top img-fluid" %>
                     <% end %>
-                    <div class="card-block">
+                    <div class="card-block p-3">
                         <%= link_to  i.project_name, land_path(i), class: "card-title" %>
                         <p class="card-text">
-                            <%= i.title.capitalize.truncate(40, separator:' ') %>
+                            <%= i.description.capitalize.truncate(40, separator:' ') if !i.description.blank? %>
                         </p>
-                        <footer>
-                          <small class="text-muted">Uploader: <%= i.user.name.capitalize %></small>
+                        <hr/>
+                        <footer class='p-auto'>
+                          <small class="text-muted inline-block">Uploader: <%= i.user.name.capitalize %></small>
+                          <% if i.user = current_user %>
+                            <%= link_to "Delete", land_path(i), method: :delete, class: "btn btn-danger pull-right m-1 inline-block", data: {confirm: "Are you sure?"} %>
+                            <%= link_to "Edit", edit_land_path(i), class: "btn btn-warning pull-right m-1 inline-block" %>
+                          <% end %>  
                         </footer>
                     </div>
                 </div>
-                  <div class="card p-3">
-                    
-                  </div>
-                <% end %>
-              </div>
+                <div class="card">
+                  
+                </div>
+              <% end %>
             </div>
+          </div>
         </div>
       <% end %>
     </div>

@@ -54,6 +54,9 @@ gem 'ckeditor_rails'
 # Generate seed file from database
 gem 'seed_dump'
 
+# Payment by paypal
+gem "paypal-express"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,7 +1,7 @@
 class CreateLands < ActiveRecord::Migration[5.1]
   def change
     create_table :lands do |t|
-      t.string :title
+      t.string :description
       t.string :project_name
       t.string :investor
       t.string :min_price
